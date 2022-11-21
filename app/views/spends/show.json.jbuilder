@@ -1,1 +1,1 @@
-json.partial! "spends/spend", spend: @spend
+json.partial! 'spends/spend', spend: @spend

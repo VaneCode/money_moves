@@ -1,5 +1,5 @@
 class SpendsController < ApplicationController
-  before_action :set_spend, only: %i[ show edit update destroy ]
+  before_action :set_spend, only: %i[show edit update destroy]
 
   # GET /spends or /spends.json
   def index
@@ -7,8 +7,7 @@ class SpendsController < ApplicationController
   end
 
   # GET /spends/1 or /spends/1.json
-  def show
-  end
+  def show; end
 
   # GET /spends/new
   def new
@@ -16,8 +15,7 @@ class SpendsController < ApplicationController
   end
 
   # GET /spends/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /spends or /spends.json
   def create
@@ -25,7 +23,7 @@ class SpendsController < ApplicationController
 
     respond_to do |format|
       if @spend.save
-        format.html { redirect_to spend_url(@spend), notice: "Spend was successfully created." }
+        format.html { redirect_to spend_url(@spend), notice: 'Spend was successfully created.' }
         format.json { render :show, status: :created, location: @spend }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +36,7 @@ class SpendsController < ApplicationController
   def update
     respond_to do |format|
       if @spend.update(spend_params)
-        format.html { redirect_to spend_url(@spend), notice: "Spend was successfully updated." }
+        format.html { redirect_to spend_url(@spend), notice: 'Spend was successfully updated.' }
         format.json { render :show, status: :ok, location: @spend }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +50,20 @@ class SpendsController < ApplicationController
     @spend.destroy
 
     respond_to do |format|
-      format.html { redirect_to spends_url, notice: "Spend was successfully destroyed." }
+      format.html { redirect_to spends_url, notice: 'Spend was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_spend
-      @spend = Spend.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def spend_params
-      params.require(:spend).permit(:name, :amount)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_spend
+    @spend = Spend.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def spend_params
+    params.require(:spend).permit(:name, :amount)
+  end
 end
