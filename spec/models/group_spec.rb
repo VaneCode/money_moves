@@ -5,8 +5,10 @@ RSpec.describe Group, type: :model do
     @user = User.create(name: 'Samantha Woods', email: 'sam@outlook.com', password: 'password',
                         password_confirmation: 'password')
     @group = Group.create(name: 'Pets', icon: 'pet_img', user: @user)
-    @spend = Spend.create(name: 'Pet food', amount: 45, author: @user)
-    @spend.groups << @group
+    @spend1 = Spend.create(name: 'Pet food', amount: 45, author: @user)
+    @spend1.groups << @group
+    @spend2 = Spend.create(name: 'Vet', amount: 50, author: @user)
+    @spend2.groups << @group
   end
 
   context 'Test group validations' do
@@ -22,6 +24,19 @@ RSpec.describe Group, type: :model do
     it 'icon should be present' do
       @group.icon = nil
       expect(@group).to_not be_valid
+    end
+  end
+
+  context 'Test methods in the model group' do
+    it 'when the group does\'nt have spends the total has to be 0' do
+      group = Group.create(name: 'Pets', icon: 'pet_img', user: @user)
+      total = group.calc_total
+      expect(total).to eq 0
+    end
+
+    it 'when the group has spends the total has to be equal to the sum of all their spends' do
+      total = @group.calc_total
+      expect(total).to eq 95
     end
   end
 end

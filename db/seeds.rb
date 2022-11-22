@@ -6,3 +6,11 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+#Inventories
+5.times do
+    Group.create do |group| 
+        group.name = Faker::Lorem.word
+        group.icon = 'car-side'
+        group.user = User.first
+    end
+end

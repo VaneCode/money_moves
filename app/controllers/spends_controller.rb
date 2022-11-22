@@ -1,9 +1,11 @@
 class SpendsController < ApplicationController
   before_action :set_spend, only: %i[show edit update destroy]
+  before_action :set_group
 
   # GET /spends or /spends.json
   def index
-    @spends = Spend.all
+    @spends = @group.spends.order(created_at: :desc)
+    @title = @group.name
   end
 
   # GET /spends/1 or /spends/1.json
@@ -60,6 +62,10 @@ class SpendsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_spend
     @spend = Spend.find(params[:id])
+  end
+
+  def set_group
+    @group = Group.find(params[:group_id])
   end
 
   # Only allow a list of trusted parameters through.
