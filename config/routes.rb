@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  devise_for :users # Routes for authentication
   resources :spends
   resources :groups
   resources :users
