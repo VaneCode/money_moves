@@ -1,3 +1,9 @@
-<h1>Money moves</h1>
-<%= link_to 'Log in', new_user_session_path %>
-<%= link_to 'Sign up', new_user_registration_path %>
+<div class="container min-h-[80vh] p-6 flex flex-col flex-1 items-center justify-between">
+  <div class="container flex flex-col flex-grow items-center justify-center gap-12">
+    <h1 class="text-4xl logo text-slate-900">Money moves</h1>
+  </div>
+  <div class="container flex flex-col">
+    <%= link_to 'Log in', new_user_session_path, class: 'btn btn-primary' %>
+    <%= link_to 'Sign up', new_user_registration_path, class: 'btn' %>
+  </div>
+</div>
