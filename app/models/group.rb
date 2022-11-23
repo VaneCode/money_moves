@@ -7,7 +7,6 @@ class Group < ApplicationRecord
   validates :icon, presence: true
   # Method
   def calc_total
-    total = 0
     spends.sum(:amount)
   end
 end
