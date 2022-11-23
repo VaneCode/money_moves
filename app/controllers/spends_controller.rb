@@ -1,9 +1,11 @@
 class SpendsController < ApplicationController
   before_action :set_spend, only: %i[show edit update destroy]
+  before_action :set_group, only: %i[index new]
 
   # GET /spends or /spends.json
   def index
-    @spends = Spend.all
+    @spends = @group.spends.order(created_at: :desc)
+    @title = @group.name
   end
 
   # GET /spends/1 or /spends/1.json
@@ -12,6 +14,9 @@ class SpendsController < ApplicationController
   # GET /spends/new
   def new
     @spend = Spend.new
+    @title = 'New Transaction'
+    @spend.groups << @group
+    @groups = current_user.groups
   end
 
   # GET /spends/1/edit
@@ -20,12 +25,14 @@ class SpendsController < ApplicationController
   # POST /spends or /spends.json
   def create
     @spend = Spend.new(spend_params)
-
+    @spend.author = current_user
     respond_to do |format|
       if @spend.save
-        format.html { redirect_to spend_url(@spend), notice: 'Spend was successfully created.' }
+        format.html { redirect_to group_spends_path, notice: "Transaction #{@spend.name} was successfully created." }
         format.json { render :show, status: :created, location: @spend }
       else
+        @group = Group.find(params[:group_id])
+        @groups = current_user.groups
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @spend.errors, status: :unprocessable_entity }
       end
@@ -62,8 +69,12 @@ class SpendsController < ApplicationController
     @spend = Spend.find(params[:id])
   end
 
+  def set_group
+    @group = Group.find(params[:group_id])
+  end
+
   # Only allow a list of trusted parameters through.
   def spend_params
-    params.require(:spend).permit(:name, :amount)
+    params.require(:spend).permit(:name, :amount, group_ids: [])
   end
 end
