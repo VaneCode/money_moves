@@ -1,14 +1,15 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Spends</h1>
-
+ <p>
+    <strong>Total:</strong>
+    <%= number_to_currency(@group.calc_total) %>
+  </p>
 <div id="spends">
   <% @spends.each do |spend| %>
     <%= render spend %>
-    <p>
-      <%= link_to "Show this spend", spend %>
-    </p>
   <% end %>
 </div>
 
 <%= link_to "New spend", new_group_spend_path(@group) %>
+<%= link_to "Back to categories", groups_path%>

@@ -11,6 +11,12 @@
     </div>
   <% end %>
 
+  <div class="field group">
+    <%= form.label :group_ids, 'Categories' %>
+    <%= form.collection_check_boxes :group_ids, @groups, :id, :name %>
+    <%= @groups %>
+  </div>
+
   <div>
     <%= form.label :name, style: "display: block" %>
     <%= form.text_field :name %>
