@@ -9,6 +9,10 @@
   .logo {
     font-family: 'Lobster Two', cursive;
   }
+
+  form .field {
+    @apply mb-2 px-4 w-full;
+  }
 }
 
 @layer components {
@@ -22,5 +26,14 @@
 
   .btn-primary {
     @apply bg-solid-blue text-white;
+  }
+
+  .input-field {
+    outline: none;
+    width: 100%;
+    height: 40px;
+    border: 1px solid lightgray;
+    border-top: none;
+    padding: 10px;
   }
 }
