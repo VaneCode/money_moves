@@ -27,7 +27,7 @@ After you're finished please remove all the comments and instructions!
   <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
   <br/>
 
-  <h3><b>Microverse README Template</b></h3>
+  <h3><b>MONEY MOVES</b></h3>
 
 </div>
 
@@ -57,11 +57,9 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 [money_moves] <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
-
-**[your_project__name]** is a...
+**[money_moves]** a mobile web application, which allows users to control their budgets. The user can divide the budget into different categories and insert the expenses that have been made in the categories. 
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -94,8 +92,6 @@ After you're finished please remove all the comments and instructions!
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
-
 - **[key_feature_1]**
 - **[key_feature_2]**
 - **[key_feature_3]**
@@ -115,8 +111,6 @@ After you're finished please remove all the comments and instructions!
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
-
-> Describe how a new developer could make use of your project.
 
 To get a local copy up and running, follow these steps.
 
@@ -198,7 +192,7 @@ Example:
 
 <!-- AUTHORS -->
 
-## 👥 Authors <a name="authors"></a>
+## 👥 Author <a name="authors"></a>
 
 > Mention all of the collaborators of this project.
 
@@ -216,7 +210,7 @@ Example:
 
 > Describe 1 - 3 features you will add to the project.
 
-- [ ] **[new_feature_1]**
+- [Side menur] **[new_feature_1]**
 - [ ] **[new_feature_2]**
 - [ ] **[new_feature_3]**
 
