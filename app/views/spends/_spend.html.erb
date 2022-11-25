@@ -1,12 +1,15 @@
-<div id="<%= dom_id spend %>">
-  <p>
-    <strong>Name:</strong>
-    <%= spend.name %>
-  </p>
-
-  <p>
-    <strong>Amount:</strong>
-    <%= spend.amount %>
-  </p>
-
+<div id="<%= dom_id spend %>" class="bg-white flex items-center shadow gap-4 mx-3 p-4">
+  <div class="flex-grow">
+    <div class="my-4 flex justify-between items-end">
+      <span class="text-1xl text-solid-grey">
+          <%= spend.name %>
+      </span>
+      <span class="text-l text-slate-900 font-bold">
+        <%= number_to_currency(spend.amount) %>
+      </span>
+    </div>
+    <div class="flex justify-start items-center w-full">
+      <span class="text-xs text-solid-grey"><%= spend.created_at.strftime('%Y-%m-%d') %></span>
+    </div>
+  </div>
 </div>
