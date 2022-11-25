@@ -11,17 +11,15 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :icon, style: "display: block" %>
-    <%= form.text_field :icon %>
+  <div class="field">
+    <%= form.text_field :icon, autofocus: true, placeholder: "Icon url", class: 'input-field'  %>
   </div>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="field">
+    <%= form.text_field :name, placeholder: "Name", class: 'input-field' %>
   </div>
 
-  <div>
+  <div class="action">
     <%= form.submit %>
   </div>
 <% end %>

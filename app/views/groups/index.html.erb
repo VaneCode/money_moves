@@ -1,13 +1,29 @@
+<div class="w-full">
+<div class="w-100 flex bg-white items-center justify-between p-4 mb-3">
+<span class="text-1xl text-solid-grey">
+      User: <%= current_user.name %>
+</span>
+      <span class="text-l font-bold">
+      Categories:  <%= @groups.count %>
+      </span>
+</div>
 <p style="color: green"><%= notice %></p>
-
-<h1>Groups</h1>
-
-<div id="groups">
-  <% @groups.each do |group| %>
+<div id="groups" class="min-w-full flex flex-col gap-3">
+ <% if @groups.count > 0 %>
+      <% @groups.each do |group| %>
     <%= link_to(group_spends_path(group)) do %>
     <%= render group %>
     <% end %>
   <% end %>
+    <% else %>
+      <h2>You don't have categories yet.</h2>
+    <% end %>
+</div>
+<div class="action">
+<%= link_to "New group", new_group_path %>
+</div>
 </div>
 
-<%= link_to "New group", new_group_path %>
+
+
+

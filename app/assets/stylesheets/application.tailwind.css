@@ -13,6 +13,10 @@
   form .field {
     @apply mb-2 px-4 w-full;
   }
+
+  nav {
+    @apply bg-solid-blue text-white;
+  }
 }
 
 @layer components {
@@ -35,5 +39,15 @@
     border: 1px solid lightgray;
     border-top: none;
     padding: 10px;
+  }
+
+  .action {
+    @apply w-screen p-4 bg-solid-green fixed bottom-0 left-0;
+  }
+
+  .action button,
+  .action input[type=submit],
+  .action a {
+    @apply py-3 uppercase flex justify-center rounded border-2 border-white border-solid text-white text-base;
   }
 }
