@@ -46,8 +46,11 @@
   }
 
   .action button,
-  .action input[type=submit],
   .action a {
     @apply py-3 uppercase flex justify-center rounded border-2 border-white border-solid text-white text-base;
+  }
+
+  .input-submit {
+    @apply py-3 uppercase w-full flex justify-center rounded border-2 border-white border-solid text-white text-base;
   }
 }

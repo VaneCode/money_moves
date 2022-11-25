@@ -1,7 +1,7 @@
 <%= form_with(model: group) do |form| %>
   <% if group.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
+    <div class="bg-red-300 rounded flex flex-col justify-center items-center m-2 text-red-800">
+      <h2 class="text-center"><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
 
       <ul>
         <% group.errors.each do |error| %>
@@ -20,6 +20,6 @@
   </div>
 
   <div class="action">
-    <%= form.submit %>
+    <%= form.submit class: 'input-submit'%>
   </div>
 <% end %>
