@@ -10,7 +10,8 @@
           "apply",
           "variants",
           "responsive",
-          "screen"
+          "screen",
+          "layer"
         ]
       }
     ],
@@ -22,7 +23,8 @@
           "apply",
           "variants",
           "responsive",
-          "screen"
+          "screen",
+          "layer"
         ]
       }
     ],

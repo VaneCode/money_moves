@@ -13,118 +13,33 @@ require 'rails_helper'
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
 RSpec.describe '/spends', type: :request do
-  # This should return the minimal set of attributes required to create a valid
-  # Spend. As you add validations to Spend, be sure to
-  # adjust the attributes here as well.
-  let(:valid_attributes) do
-    skip('Add a hash of attributes valid for your model')
-  end
-
-  let(:invalid_attributes) do
-    skip('Add a hash of attributes invalid for your model')
+  before :each do
+    @user = User.create(name: 'Samantha Woods', email: 'sam@outlook.com', password: 'password',
+                        password_confirmation: 'password')
+    @group = Group.create(name: 'Pets', icon: 'pet_img', user: @user)
+    @spend = Spend.create(name: 'Food', amount: 20, author: @user)
+    @spend.groups << @group
+    sign_in @user
   end
 
   describe 'GET /index' do
-    it 'renders a successful response' do
-      Spend.create! valid_attributes
-      get spends_url
-      expect(response).to be_successful
+    it 'returns http success' do
+      get group_spends_path(@group)
+      expect(response).to have_http_status(302)
     end
   end
 
   describe 'GET /show' do
-    it 'renders a successful response' do
-      spend = Spend.create! valid_attributes
-      get spend_url(spend)
-      expect(response).to be_successful
+    it 'returns http success' do
+      get group_spends_path(@group, @spend)
+      expect(response).to have_http_status(302)
     end
   end
 
   describe 'GET /new' do
     it 'renders a successful response' do
-      get new_spend_url
-      expect(response).to be_successful
-    end
-  end
-
-  describe 'GET /edit' do
-    it 'renders a successful response' do
-      spend = Spend.create! valid_attributes
-      get edit_spend_url(spend)
-      expect(response).to be_successful
-    end
-  end
-
-  describe 'POST /create' do
-    context 'with valid parameters' do
-      it 'creates a new Spend' do
-        expect do
-          post spends_url, params: { spend: valid_attributes }
-        end.to change(Spend, :count).by(1)
-      end
-
-      it 'redirects to the created spend' do
-        post spends_url, params: { spend: valid_attributes }
-        expect(response).to redirect_to(spend_url(Spend.last))
-      end
-    end
-
-    context 'with invalid parameters' do
-      it 'does not create a new Spend' do
-        expect do
-          post spends_url, params: { spend: invalid_attributes }
-        end.to change(Spend, :count).by(0)
-      end
-
-      it "renders a response with 422 status (i.e. to display the 'new' template)" do
-        post spends_url, params: { spend: invalid_attributes }
-        expect(response).to have_http_status(:unprocessable_entity)
-      end
-    end
-  end
-
-  describe 'PATCH /update' do
-    context 'with valid parameters' do
-      let(:new_attributes) do
-        skip('Add a hash of attributes valid for your model')
-      end
-
-      it 'updates the requested spend' do
-        spend = Spend.create! valid_attributes
-        patch spend_url(spend), params: { spend: new_attributes }
-        spend.reload
-        skip('Add assertions for updated state')
-      end
-
-      it 'redirects to the spend' do
-        spend = Spend.create! valid_attributes
-        patch spend_url(spend), params: { spend: new_attributes }
-        spend.reload
-        expect(response).to redirect_to(spend_url(spend))
-      end
-    end
-
-    context 'with invalid parameters' do
-      it "renders a response with 422 status (i.e. to display the 'edit' template)" do
-        spend = Spend.create! valid_attributes
-        patch spend_url(spend), params: { spend: invalid_attributes }
-        expect(response).to have_http_status(:unprocessable_entity)
-      end
-    end
-  end
-
-  describe 'DELETE /destroy' do
-    it 'destroys the requested spend' do
-      spend = Spend.create! valid_attributes
-      expect do
-        delete spend_url(spend)
-      end.to change(Spend, :count).by(-1)
-    end
-
-    it 'redirects to the spends list' do
-      spend = Spend.create! valid_attributes
-      delete spend_url(spend)
-      expect(response).to redirect_to(spends_url)
+      get new_group_spend_path(@group)
+      expect(response).to have_http_status(302)
     end
   end
 end

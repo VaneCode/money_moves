@@ -2,24 +2,25 @@
 <html>
   <head>
     <title>Money Moves</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <script src="https://kit.fontawesome.com/83d0b64e5b.js" crossorigin="anonymous"></script>
   </head>
 
-  <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <body class="flex flex-col bg-stone-200">
   <% if user_signed_in? %>
-  <header class="site-header sticky-top py-1 bg-primary">
    <%= render 'shared/navbar' %>
-  </header>
   <% end %>
-  <main>
+  <main class="container mx-auto flex-grow flex flex-col">
+  <% if user_signed_in? %>
+   <p class="notice"><%= notice %></p>
+   <p class="alert"><%= alert %></p>
+  <% end %>
     <%= yield %>
   </main>
   </body>

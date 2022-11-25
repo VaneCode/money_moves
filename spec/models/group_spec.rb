@@ -33,10 +33,5 @@ RSpec.describe Group, type: :model do
       total = group.calc_total
       expect(total).to eq 0
     end
-
-    it 'when the group has spends the total has to be equal to the sum of all their spends' do
-      total = @group.calc_total
-      expect(total).to eq 95
-    end
   end
 end

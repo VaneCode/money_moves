@@ -1,7 +1,7 @@
 <%= form_with model: spend, url: group_spends_path(@group) do |form| %>
   <% if spend.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(spend.errors.count, "error") %> prohibited this spend from being saved:</h2>
+    <div class="bg-red-300 rounded flex flex-col justify-center items-center m-2 text-red-800">
+      <h2 class="text-center"><%= pluralize(spend.errors.count, "error") %> prohibited this spend from being saved:</h2>
 
       <ul>
         <% spend.errors.each do |error| %>
@@ -11,23 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field group">
-    <%= form.label :group_ids, 'Categories' %>
-    <%= form.collection_check_boxes :group_ids, @groups, :id, :name %>
-    <%= @groups %>
+  <div class="flex gap-2 w-full field">
+    <%= form.collection_check_boxes :group_ids, @groups, :id, :name, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full"%>
   </div>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="field">
+    <%= form.text_field :name, placeholder: "Name", class: 'input-field' %>
   </div>
 
-  <div>
-    <%= form.label :amount, style: "display: block" %>
-    <%= form.text_field :amount %>
+  <div class="field">
+    <%= form.text_field :amount, class: 'input-field' %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="action">
+    <%= form.submit 'CREATE TRANSACTION', class: 'input-submit'%>
   </div>
 <% end %>

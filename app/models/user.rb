@@ -8,4 +8,8 @@ class User < ApplicationRecord
   has_many :groups, dependent: :destroy
   # Validations
   validates :name, presence: true
+  # Methods
+  def calc_total_spends
+    spends.sum(:amount)
+  end
 end
