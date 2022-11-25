@@ -135,7 +135,7 @@ Example commands:
 
 ```sh
   cd my-folder
-  git clone git@github.com:myaccount/my-project.git
+  git clone https://github.com/VaneCode/money_moves.git
 ```
 --->
 
@@ -154,13 +154,13 @@ Example command:
 
 ### Usage
 
-To run the project, execute the following command:
+This project use Tailwind, so to run the project, execute the following command:
 
 <!--
 Example command:
 
 ```sh
-  rails server
+  bin/dev
 ```
 --->
 
@@ -172,7 +172,7 @@ To run tests, run the following command:
 Example command:
 
 ```sh
-  bin/rails test test/models/article_test.rb
+  bin/rails spec
 ```
 --->
 
@@ -194,8 +194,6 @@ Example:
 
 ## 👥 Author <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
-
 👤 **Vanessa Bonito**
 
 - GitHub: [@VaneCode](https://github.com/VaneCode)
@@ -208,11 +206,9 @@ Example:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
-
-- [Side menur] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- [Implement the left side menu.] **[new_feature_1]**
+- [Add dark theme.] **[new_feature_2]**
+- [Add user picture profile.] **[new_feature_3]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -230,9 +226,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
-
-If you like this project...
+Give a star if you like this project!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -240,9 +234,8 @@ If you like this project...
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
-
-I would like to thank...
+- This project's styles are based on the [design](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=&&&) by [Gregoire Vella](http://linkedin.com/company/minimalapps).
+- Microverse.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -250,15 +243,13 @@ I would like to thank...
 
 ## ❓ FAQ <a name="faq"></a>
 
-> Add at least 2 questions new developers would ask when they decide to use your project.
+- **[Why bin/dev instead of rails server?]**
 
-- **[Question_1]**
+  - [The commend bin/dev not only start your server, it also builts your Tailwind CSS classes to give the styles.]
 
-  - [Answer_1]
+- **[What is current_user?]**
 
-- **[Question_2]**
-
-  - [Answer_2]
+  - [This is a built-in method of Devise which help to get the user who is currently loged in the app.]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -267,7 +258,5 @@ I would like to thank...
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
