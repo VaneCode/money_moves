@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@layer base {
+  .logo {
+    font-family: 'Lobster Two', cursive;
+  }
+
+  form .field {
+    @apply mb-2 px-4 w-full;
+  }
+
+  nav {
+    @apply bg-solid-blue text-white;
+  }
+}
+
+@layer components {
+  .auth-header {
+    @apply flex bg-solid-blue text-white justify-between items-center px-2 sm:px-4 py-2.5;
+  }
+
+  .btn {
+    @apply py-2 px-4 rounded font-normal text-center uppercase;
+  }
+
+  .btn-primary {
+    @apply bg-solid-blue text-white;
+  }
+
+  .input-field {
+    outline: none;
+    width: 100%;
+    height: 40px;
+    border: 1px solid lightgray;
+    border-top: none;
+    padding: 10px;
+  }
+
+  .action {
+    @apply w-screen p-4 bg-solid-green fixed bottom-0 left-0;
+  }
+
+  .action button,
+  .action a {
+    @apply py-3 uppercase flex justify-center rounded border-2 border-white border-solid text-white text-base;
+  }
+
+  .input-submit {
+    @apply py-3 uppercase w-full flex justify-center rounded border-2 border-white border-solid text-white text-base;
+  }
+}

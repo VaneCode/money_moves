@@ -1,0 +1,19 @@
+<div id="<%= dom_id group %>" class="bg-white flex items-center shadow gap-4 mx-3 p-4">
+  <div class="text-center rounded-full w-20 h-20 bg-lead">
+    <%= image_tag(group.icon, alt: "category icon", class: "img-fluid hover:scale-110 transition duration-300 ease-in-out") %>
+  </div>
+
+  <div class="flex-grow">
+    <div class="my-4 flex justify-between items-end">
+      <span class="text-1xl text-solid-grey">
+          <%= group.name %>
+      </span>
+      <span class="text-l text-slate-900 font-bold">
+        <%= number_to_currency(group.calc_total) %>
+      </span>
+    </div>
+    <div class="flex justify-start items-center w-full">
+      <span class="text-xs text-solid-grey"><%= group.created_at.strftime('%Y-%m-%d') %></span>
+    </div>
+  </div>
+</div>

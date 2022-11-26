@@ -1,0 +1,15 @@
+<div class="auth-header">
+  <%= link_to :back, class: "flex items-center justify-center p-2" do %>
+      <i class="fa-solid fa-arrow-left fa-2x"></i>
+    <% end %>
+  <h2 class="text-lg">CONFIRM ACCOUNT</h2>
+  <%= link_to 'Confirm', confirmation_url(@resource, confirmation_token: @token) %>
+</div>
+<div class="flex flex-col">
+<p>Welcome <%= @email %>!</p>
+<p>You can confirm your account email through the link below:</p>
+<%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %>
+</div>
+
+
+
