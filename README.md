@@ -70,9 +70,7 @@ This is a mobile web application, which allows users to control their budgets. T
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Add a link to your deployed project.
-
-- [Live Demo Link](https://yourdeployedapplicationlink.com)
+- [Live Demo Link](https://money-moves.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -132,7 +130,7 @@ You can deploy this project using:
 
 
 ```sh
-
+ bin/dev
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
