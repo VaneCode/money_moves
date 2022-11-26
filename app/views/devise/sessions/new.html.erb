@@ -18,10 +18,13 @@
   <div class="field">
     <%= f.password_field :password, placeholder:"Password", autocomplete: "current-password", class: 'input-field' %>
   </div>
-  <div class="flex justify-center items-center mt-8">
+  <div class="flex flex-col justify-center items-center mt-8">
     <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
      <%= link_to "Forgot password?", new_password_path(resource_name), class: 'text-stone-500' %><br />
    <% end %>
+   <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+  <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name), class: 'text-stone-500' %><br />
+<% end %>
   </div>
 <% end %>
 
