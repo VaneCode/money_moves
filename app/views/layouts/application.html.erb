@@ -17,10 +17,6 @@
    <%= render 'shared/navbar' %>
   <% end %>
   <main class="container mx-auto flex-grow flex flex-col">
-  <% if user_signed_in? %>
-   <p class="notice"><%= notice %></p>
-   <p class="alert"><%= alert %></p>
-  <% end %>
     <%= yield %>
   </main>
   </body>
